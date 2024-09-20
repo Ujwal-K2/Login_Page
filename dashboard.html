@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        .sidebar {
+            background-color: #f8f9fa;
+            padding-top: 1rem;
+            height: 100%;
+        }
+        .sidebar a {
+            display: block;
+            padding: 0.75rem;
+            color: #2d3b49;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #e9ecef;
+        }
+        .form-container {
+            display: none;
+            margin-top: 1rem;
+        }
+        .table-container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Mini Project</h1>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 sidebar">
+                <a href="#">Dashboard</a>
+                <a href="#">Home</a>
+                <a href="#" id="addClubBtn">Add Club</a>
+                <a href="#">Reports</a>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 col-lg-10 px-4">
+                <!-- Add Club Form -->
+                <div id="addClub" class="form-container">
+                    <h2>Add Club</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="memberName">Member Name</label>
+                            <input type="text" class="form-control" id="memberName" name="memberName">
+                        </div>
+                        <div class="form-group">
+                            <label for="memberEmail">Member Email</label>
+                            <input type="email" class="form-control" id="memberEmail" name="memberEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="clubName">Place</label>
+                            <input type="text" class="form-control" id="placeName" name="placeName">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <!-- Table with Dummy Data -->
+                <div class="table-container">
+                    <h2>Member Details</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Place</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jack</td>
+                                <td>jack@example.com</td>
+                                <td>UAE</td>
+                            </tr>
+                            <tr>
+                                <td>Wick</td>
+                                <td>wick@example.com</td>
+                                <td>UK</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>johnson@example.com</td>
+                                <td>USA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#addClubBtn').click(function(e) {
+                e.preventDefault();
+                $('#addClub').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
